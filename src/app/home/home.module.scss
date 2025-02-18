@@ -3,78 +3,145 @@
 .home {
   width: 100%;
   .hero {
-    background-color: red;
     background-image: url("../../assets/fish4.jpg");
     width: 100%;
     height: 70vh;
     border-radius: 0 0 50px 50px;
+    display: flex;
+    flex-direction: column;
 
     @include apply-at-xl-size {
       background-color: red;
       background-image: url("../../assets/fish4.jpg");
       width: 100%;
-      height: 100vh;
+      height: 80vh;
       border-radius: 0 0 50px 50px;
     }
   }
 
-  .service {
-    height: 65vh;
-    border-radius: 10px;
-    // border: 2px solid black;
-    background-color: yellow;
+  .banner {
+    height: 40vh;
     display: flex;
-    flex-direction: column;
-    background-color: #B2CFF9;
-    
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
     @include apply-at-xl-size {
-      height: 100vh;
+      height: 60vh;
     }
 
-    .title {
+    .image {
       width: 100%;
       height: fit-content;
-      background-color: red;
-    }
-    
-    .wrapper {
-      background-color: blue;
-      width: 100%;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
 
-      .top, .bellow {
-        display: flex;
-        flex-grow: 1;
-        justify-content: center;
+      @include apply-at-md-size {
+        width: 50%;
+      }
+    }
+  }
+
+  .service {
+    background-color: #b0d0ff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-areas:
+        "a a b"
+        "c d d";
+      gap: 20px;
+
+      .fish-card {
+        grid-area: a;
+      }
+
+      .plant-card {
+        grid-area: b;
+      }
+
+      .marine-card {
+        grid-area: c;
+      }
+
+      .coral-card {
+        grid-area: d;
+      }
+
+      @include apply-at-md-size {
+        .fish-card {
+          grid-area: auto;
+        }
+
+        .plant-card {
+          grid-area: auto;
+        }
+
+        .marine-card {
+          grid-area: auto;
+        }
+
+        .coral-card {
+          grid-area: auto;
+        }
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        
-        width: 100%;
-        
-        .first {
-          width: 30%;
-        background-color: white;
-      }
-
-      .second {
-        width: 60%;
-        background-color: gray;
-      }
-
-      .third {
-        width: 60%;
-        background-color: gray;
-      }
-
-      .fourth {
-        width: 30%;
-        background-color: white;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        margin: auto;
       }
     }
-  } 
+
+    .card {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+
+      @include apply-at-xl-size {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .card img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
   }
 }

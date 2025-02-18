@@ -1,38 +1,45 @@
 import React from "react";
 import classes from "./home.module.scss";
 import TrackingSearch from "../components/ui/TrackingSearch/TrackingSearch";
+import Image from "next/image";
+import Icon from "../../assets/icon.png";
+import fist1 from "../../assets/fish1.jpg";
+import fist2 from "../../assets/fish2.jpg";
+import fist3 from "../../assets/fish3.jpg";
+import fist4 from "../../assets/fish4.jpg";
+
+const products = [
+  { name: "Freshwater Fish", image: fist1, customClass: "fish-card" },
+  { name: "Freshwater Plants", image: fist2, customClass: "plant-card" },
+  { name: "Marine Fish", image: fist3, customClass: "marine-card" },
+  { name: "Corals", image: fist4, customClass: "coral-card" },
+];
 
 const page = () => {
   return (
     <div className={classes.home}>
       <div className={classes.hero}>
-        <h1>hero</h1>
         <TrackingSearch />
       </div>
-      <div>
-        <h1>banner identity</h1>
+      <div className={classes.banner}>
+        <Image
+          src={Icon}
+          alt="Picture of the author"
+          className={classes.image}
+        />
       </div>
       <div className={classes.service}>
-        <div className={classes.title}>
-          <h1>We can carry the items you need</h1>
-        </div>
-        <div className={classes.wrapper}>
-        <div className={classes.top}>
-          <div className={classes.first}>
-            <h1>1</h1>
-          </div>
-          <div className={classes.second}>
-            <h1>2</h1>
-          </div>
-        </div>
-        <div className={classes.bellow}>
-          <div className={classes.third}>
-            <h1>3</h1>
-          </div>
-          <div className={classes.fourth}>
-            <h1>4</h1>
-          </div>
-        </div>
+        <h2 className={classes.title}>We can carry the items you need</h2>
+        <div className={classes.grid}>
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className={`${classes.card} ${classes[product.customClass]}`}
+            >
+              <Image src={product.image} alt={product.name} fill />
+              <div className={classes.overlay}>{product.name}</div>
+            </div>
+          ))}
         </div>
       </div>
       <div>
