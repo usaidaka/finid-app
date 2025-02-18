@@ -1,3 +1,3 @@
-@import "./media-mixing.scss";
-@import "./color.scss";
-@import "./layout.scss";
+@forward "./media-mixing.scss";
+@use "./color.scss";
+@use "./layout.scss";
