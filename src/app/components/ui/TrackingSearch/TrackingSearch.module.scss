@@ -1,3 +1,5 @@
+@import "../../../../styles/base.scss";
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,7 +15,8 @@
   gap: 10px;
   color: white;
   position: relative;
-  width: 350px;
+  width: 80%;
+  max-width: 350px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
@@ -21,6 +24,10 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   height: 150px;
   clip-path: polygon(0 0, 40% 0, 45% 25px, 100% 25px, 100% 100%, 0 100%);
+
+  @include apply-at-xl-size {
+    width: 350px;
+  }
 
   .title {
     font-size: 18px;

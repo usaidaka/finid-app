@@ -17,4 +17,64 @@
       border-radius: 0 0 50px 50px;
     }
   }
+
+  .service {
+    height: 65vh;
+    border-radius: 10px;
+    // border: 2px solid black;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    background-color: #B2CFF9;
+    
+    @include apply-at-xl-size {
+      height: 100vh;
+    }
+
+    .title {
+      width: 100%;
+      height: fit-content;
+      background-color: red;
+    }
+    
+    .wrapper {
+      background-color: blue;
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .top, .bellow {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+        width: 100%;
+        
+        .first {
+          width: 30%;
+        background-color: white;
+      }
+
+      .second {
+        width: 60%;
+        background-color: gray;
+      }
+
+      .third {
+        width: 60%;
+        background-color: gray;
+      }
+
+      .fourth {
+        width: 30%;
+        background-color: white;
+      }
+    }
+  } 
+  }
 }
