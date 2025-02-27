@@ -1,6 +1,8 @@
+"use client"
+
 import React from "react";
 import classes from "./home.module.scss";
-import TrackingSearch from "../components/ui/TrackingSearch/TrackingSearch";
+import TrackingSearch from "../components/ui/TrackingSearch";
 import Image from "next/image";
 import Icon from "../../assets/icon.png";
 import fist1 from "../../assets/fish1.jpg";
@@ -42,8 +44,8 @@ const page = () => {
           ))}
         </div>
       </div>
-      <div>
-        <h1>quotes</h1>
+      <div className={classes.promote}>
+        <h1>promote</h1>
       </div>
     </div>
   );
