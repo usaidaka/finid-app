@@ -1,28 +1,23 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import axios from "axios"; // Import Axios
+import React from "react";
 import classes from "./home.module.scss";
 import TrackingSearch from "../components/ui/TrackingSearch";
 import Image from "next/image";
-import Icon from "../../assets/images/icon.png";
+import Icon from "../../assets/icon.png";
+import fist1 from "../../assets/fish1.jpg";
+import fist2 from "../../assets/fish2.jpg";
+import fist3 from "../../assets/fish3.jpg";
+import fist4 from "../../assets/fish4.jpg";
+
+const products = [
+  { name: "Freshwater Fish", image: fist1, customClass: "fish-card" },
+  { name: "Freshwater Plants", image: fist2, customClass: "plant-card" },
+  { name: "Marine Fish", image: fist3, customClass: "marine-card" },
+  { name: "Corals", image: fist4, customClass: "coral-card" },
+];
 
 const page = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/data.json")
-      .then((res) => {
-        const updatedProducts = res.data.map((product: { image: any }) => ({
-          ...product,
-          image: require(`../../assets/images/${product.image}`),
-        }));
-        setProducts(updatedProducts);
-      })
-      .catch((err) => console.error("Error fetching JSON:", err));
-  }, []);
-
   return (
     <div className={classes.home}>
       <div className={classes.hero}>
@@ -46,8 +41,8 @@ const page = () => {
               <Image
                 src={product.image}
                 alt={product.name}
-                width={200}
-                height={200}
+                width={500}
+                height={500}
               />
               <div className={classes.overlay}>{product.name}</div>
             </div>
