@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Freshwater Fish",
+    "image": "fish1.jpg",
+    "customClass": "fish-card"
+  },
+  {
+    "name": "Freshwater Plants",
+    "image": "fish2.jpg",
+    "customClass": "plant-card"
+  },
+  { "name": "Marine Fish", "image": "fish3.jpg", "customClass": "marine-card" },
+  { "name": "Corals", "image": "fish4.jpg", "customClass": "coral-card" }
+]
